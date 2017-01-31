@@ -22,24 +22,24 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNOMINMAX")
 
 set(
-    source_files
+    source_header_files
 	include/linqpp.hpp
 )
 
 source_group(
 	"Headers"
 	FILES
-	include/linqpp.hpp
+	${source_header_files}}
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Range-V3-VS2015/include)
 
-add_library(Linqpp STATIC ${source_files})
+add_library(Linqpp STATIC ${source_header_files})
 set_target_properties(Linqpp PROPERTIES LINKER_LANGUAGE CXX)
 
 add_subdirectory(tests)
 
 # add the install targets
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/linqpp.hpp
+install (FILES ${source_header_files}
          DESTINATION Linqpp)
