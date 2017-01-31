@@ -1,17 +1,18 @@
-file(
-	GLOB_RECURSE
+set(
 	source_files_headers
-	include/linqpp.hpp
+	../include/linqpp.hpp
 )
 
-file(
-	GLOB_RECURSE
+set(
 	source_files_source
 	src/core.test.cpp
 )
 
 include_directories(
-	include/
+    ${CMAKE_CURRENT_SOURCE_DIR}/Range-V3-VS2015/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/H2OFastTests/inc
+	${CMAKE_CURRENT_SOURCE_DIR}/../include
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 	$(CMAKE_SOURCE_DIR)
 )
 

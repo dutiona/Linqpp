@@ -21,17 +21,19 @@ elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
 endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNOMINMAX")
 
-file(source_files
+set(
+    source_files
 	include/linqpp.hpp
 )
 
 source_group(
 	"Headers"
 	FILES
-	include/linqpp.h
+	include/linqpp.hpp
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Range-V3-VS2015/include)
 
 add_library(Linqpp STATIC ${source_files})
 set_target_properties(Linqpp PROPERTIES LINKER_LANGUAGE CXX)
